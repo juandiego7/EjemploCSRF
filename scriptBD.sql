@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-06-2017 a las 14:24:45
+-- Tiempo de generación: 01-06-2017 a las 15:43:55
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 5.6.25
 
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cita` (
-  `id` varchar(5) NOT NULL,
+  `id` int(5) NOT NULL,
   `dia` date NOT NULL,
   `hora` time NOT NULL,
   `asunto` varchar(250) NOT NULL,
@@ -39,7 +39,8 @@ CREATE TABLE `cita` (
 --
 
 INSERT INTO `cita` (`id`, `dia`, `hora`, `asunto`, `usuario`) VALUES
-('1', '2017-06-01', '12:00:00', 'Exposicion: Ingenieria Web ', 'root');
+(3, '2017-06-01', '12:00:00', 'Exposicion de seguridad', 'root'),
+(2, '2017-06-08', '12:00:00', 'Seguimiento: Aplicacion completa', 'root');
 
 -- --------------------------------------------------------
 
@@ -57,7 +58,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`username`, `password`) VALUES
-('root', '123');
+('root', '56');
 
 --
 -- Índices para tablas volcadas
@@ -77,6 +78,15 @@ ALTER TABLE `cita`
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`username`);
 
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `cita`
+--
+ALTER TABLE `cita`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
